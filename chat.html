@@ -1,0 +1,27 @@
+%#!/usr/bin/env python
+%# Foundations of Python Network Programming - Chapter 11 - bottle_template.py
+%# The page template that goes with bottle_app.py.
+%#
+<html><head><title>bottle_app.py</title></head>
+<body>
+    Selamat Datang, silahkan masukkan nama dan pesan dibawah :)
+    <form>
+	<table>
+	<tr><td>nama</td><td><input name="username"></td></tr>
+	<tr><td>Isi</td><td><textarea name="isi"></textarea></td></tr>
+	<tr><td><input type="submit"></td></tr>
+	</table>
+	</form>
+	
+	%#template to generate a HTML table from a list of tuples (or list of lists, or tuple of tuples or ...)
+	<p>The open items are as follows:</p>
+	<table border="1">
+	%for row in rows:
+		<tr>
+		%for col in row:
+			<td>{{col}}</td>
+		%end
+		</tr>
+	%end
+	</table>
+</body>
